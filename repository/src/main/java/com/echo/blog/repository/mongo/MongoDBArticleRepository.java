@@ -1,6 +1,7 @@
 package com.echo.blog.repository.mongo;
 
 import com.echo.blog.model.Article;
+import com.echo.blog.model.Comment;
 import com.echo.blog.repository.ArticleDao;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -18,6 +19,9 @@ import static org.springframework.data.mongodb.core.query.Query.query;
  */
 @Repository
 public class MongoDBArticleRepository implements ArticleDao{
+    public List<Comment> getComments(String id) {
+        return findById(id).getComments();
+    }
 
     @Resource
     private MongoOperations operations;
@@ -35,5 +39,14 @@ public class MongoDBArticleRepository implements ArticleDao{
     public List<Article> findByAuthor(Long author) {
         Query query = query(where("authorsList").is(author));
         return operations.find(query, Article.class);
+    }
+
+    public List<Article> findAll() {
+        return operations.findAll(Article.class);
+    }
+
+    public Article deleteArticle(String id){
+        operations.remove(id);
+        return null;
     }
 }

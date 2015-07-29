@@ -1,4 +1,4 @@
-package com.echo.blog;
+package com.echo.blog.controller;
 
 
 import org.springframework.stereotype.Controller;

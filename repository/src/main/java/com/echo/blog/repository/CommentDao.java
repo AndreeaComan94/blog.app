@@ -8,7 +8,8 @@ import java.util.List;
  * Created by UserA on 7/8/2015.
  */
 public interface CommentDao {
-    Comment findById(int id);
+    Comment findById(String id);
     List<Comment> findAll();
-    Boolean saveComment(Comment comment);
+    List<Comment> findByAuthor(Long Author);
+    Comment saveComment(Comment comment);
 }

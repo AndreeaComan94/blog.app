@@ -9,39 +9,29 @@ import java.util.TimeZone;
  */
 @Document
 public class Comment extends AbstractEntity{
-    private String author;
-    private String description;
-    private TimeZone time;
+    private String personCom;
+    private String content;
 
-    public Comment( String author, String description, TimeZone time) {
+    public Comment(){}
 
-        this.author = author;
-        this.description = description;
-        this.time = time;
+    public Comment(String personCom, String content) {
+        this.personCom = personCom;
+        this.content = content;
     }
 
-
-    public String getAuthor() {
-        return author;
+    public String getPersonCom() {
+        return personCom;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setPersonCom(String personCom) {
+        this.personCom = personCom;
     }
 
-    public String getDescription() {
-        return description;
+    public String getContent() {
+        return content;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public TimeZone getTime() {
-        return time;
-    }
-
-    public void setTime(TimeZone time) {
-        this.time = time;
+    public void setContent(String content) {
+        this.content = content;
     }
 }

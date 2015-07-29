@@ -16,6 +16,16 @@ public class Article extends AbstractEntity{
     private String title;
     private String content;
 
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public List<Comment> comments;
+
     @Indexed(unique = true)
     private String isbdn;
 

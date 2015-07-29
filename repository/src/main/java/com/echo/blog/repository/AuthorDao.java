@@ -15,4 +15,5 @@ public interface  AuthorDao extends MongoRepository<Author, String> {
 
     @Query("{ ?0 : ?1 }")
     List<Author> findByAttributes(String key, String value);
+
 }
